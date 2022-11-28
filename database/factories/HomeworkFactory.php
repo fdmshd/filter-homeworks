@@ -37,7 +37,7 @@ class HomeworkFactory extends Factory
         }
 
         return [
-            'title' => $this->faker->sentence,
+            'title' => $this->faker->word(),
             'status' => $status,
             'score' => $score,
             'deadline' => $deadline,

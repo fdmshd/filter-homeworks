@@ -3,10 +3,11 @@
 
 <head>
     <title>Homeworks</title>
+    <link rel="stylesheet" href="/css/hw_statuses.css" type="text/css">
 </head>
 
 <body>
-    <div class="card table-card">
+    <div class="statuses-table">
         <table>
             <thead>
                 <th>Дз</th>
@@ -26,5 +27,23 @@
             </tbody>
         </table>
     </div>
+    <div class="buttons-wrapper">
+        <div class="buttons-block">
+            <div class="buttons">
+                <button>Невыполненные</button>
+            </div>
+            <div class="buttons">
+                <button>Ожидают проверки</button>
+            </div>
+            <div class="buttons">
+                <button>С опозданием</button>
+            </div>
+            <div class="buttons">
+                <button>Проверено</button>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

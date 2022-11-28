@@ -1,0 +1,118 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+thead {
+  background-color: #d2d2d2;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+tr td:nth-child(1) {
+  background-color: #e4e4e4;
+}
+
+button {
+  background-color: mediumspringgreen;
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.buttons-wrapper{
+  margin-top: 10px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 50%; 
+}
+
+.buttons-block {
+  width: 55%;
+  height: 55%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+
+}
+
+.buttons{
+  height: 40%;
+  width: 45%;
+  margin-top: 10px;
+}
+
+.statuses-table {
+  width: 90%;
+  max-height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+
+  width: 6px;
+
+}
+
+::-webkit-scrollbar-track {
+
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
