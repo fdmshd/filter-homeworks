@@ -20,7 +20,7 @@
                     <td>{{$homework->title}}</td>
                     <td>{{$homework->status}}</td>
                     <td>{{$homework->score}}</td>
-                    <td>{{$homework->dealine}}</td>
+                    <td>{{$homework->deadline}}</td>
                 </tr>
                 @endforeach
             </tbody>

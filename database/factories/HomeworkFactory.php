@@ -31,9 +31,15 @@ class HomeworkFactory extends Factory
                 Status::Verified
             ]);
         }
+        $score = null;
+        if ($status == Status::Verified){
+            $score = $this->faker->numberBetween(0,100);
+        }
+
         return [
             'title' => $this->faker->sentence,
             'status' => $status,
+            'score' => $score,
             'deadline' => $deadline,
             'owner_id' => User::factory(),
             'completion_timestamp' => $completionTime,

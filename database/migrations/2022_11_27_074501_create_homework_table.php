@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('status');
+            $table->integer('score')->nullable();
             $table->dateTime('deadline');
-            $table->dateTime('completion_timestamp');
+            $table->dateTime('completion_timestamp')->nullable();
             $table->foreignId('owner_id')
                 ->references('id')
                 ->on('users')

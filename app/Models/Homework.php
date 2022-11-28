@@ -28,6 +28,7 @@ class Homework extends Model
     protected $fillable = [
         'title',
         'status',
+        'score',
         'user_id',
         'deadline',
         'completion_timestamp'
