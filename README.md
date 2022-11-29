@@ -26,7 +26,11 @@ php artisan key:generate
 ```bash
 ./vendor/bin/sail artisan migrate
 ```
-
+Если в этот момент возникнет какая-либо ошибка повторите две предыдущие команды
+```bash
+./vendor/bin/sail up -d
+./vendor/bin/sail artisan migrate
+```
 Заполните базу
 ```bash
 ./vendor/bin/sail artisan db:seed
