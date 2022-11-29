@@ -19,7 +19,7 @@ php artisan key:generate
 
 Запустите приложение:
 ```bash
-    ./vendor/bin/sail up
+./vendor/bin/sail up -d
 ```
 
 Выполните миграцию
