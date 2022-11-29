@@ -20,22 +20,22 @@ class HomeworkFactory extends Factory
      */
     public function definition()
     {
-        $deadline = $this->faker->dateTimeThisMonth();
-        $completionTime = $this->faker->dateTimeThisMonth();
-        if ($deadline < $completionTime) {
-            $status = HomeworkStatus::Late;
-        } else {
-            $status  = $this->faker->randomElement([
-                HomeworkStatus::Awaiting,
-                HomeworkStatus::Uncompleted,
-                HomeworkStatus::Verified
-            ]);
-        }
         $score = null;
-        if ($status == HomeworkStatus::Verified){
-            $score = $this->faker->numberBetween(0,100);
+        $deadline = $this->faker->dateTimeThisMonth();
+        $status  = $this->faker->randomElement(HomeworkStatus::cases());
+        switch ($status) {
+            case HomeworkStatus::Late:
+                $completionTime = $this->faker->dateTimeInInterval($deadline, '+10 days');
+                break;
+            case HomeworkStatus::Uncompleted:
+                $completionTime = null;
+                break;
+            case HomeworkStatus::Verified:
+                $score = $this->faker->numberBetween(0, 100);
+            case HomeworkStatus::Awaiting:
+                $completionTime = $this->faker->dateTimeInInterval($deadline, '-10 days');
+                break;
         }
-
         return [
             'title' => $this->faker->word(),
             'status' => $status,
