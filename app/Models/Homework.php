@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-enum Status:string
+enum HomeworkStatus:string
 {
     case Uncompleted = 'uncompleted';
 

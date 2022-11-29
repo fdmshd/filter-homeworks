@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Homework;
-use App\Models\Status;
+use App\Models\HomeworkStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,16 +23,16 @@ class HomeworkFactory extends Factory
         $deadline = $this->faker->dateTimeThisMonth();
         $completionTime = $this->faker->dateTimeThisMonth();
         if ($deadline < $completionTime) {
-            $status = Status::Late;
+            $status = HomeworkStatus::Late;
         } else {
             $status  = $this->faker->randomElement([
-                Status::Awaiting,
-                Status::Uncompleted,
-                Status::Verified
+                HomeworkStatus::Awaiting,
+                HomeworkStatus::Uncompleted,
+                HomeworkStatus::Verified
             ]);
         }
         $score = null;
-        if ($status == Status::Verified){
+        if ($status == HomeworkStatus::Verified){
             $score = $this->faker->numberBetween(0,100);
         }
 

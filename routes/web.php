@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeworkStatusesController;
+use App\Http\Controllers\HomeworksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeworkStatusesController::class, 'index']);
+Route::get('/',[HomeworksController::class, 'index']);
 
-Route::get('/status', [HomeworkStatusesController::class, 'getByStatus']);
+Route::get('/status', [HomeworksController::class, 'getByStatus']);
