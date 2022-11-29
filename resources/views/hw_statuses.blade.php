@@ -15,7 +15,7 @@
                 <th>Оценка</th>
                 <th>Deadline</th>
             </thead>
-            <tbody>
+            <tbody id="homework-list">
                 @foreach ($homeworks as $homework)
                 <tr>
                     <td>{{$homework->title}}</td>
@@ -30,20 +30,40 @@
     <div class="buttons-wrapper">
         <div class="buttons-block">
             <div class="buttons">
-                <button>Невыполненные</button>
+                <button class="click" id="click1" value="uncompleted">Невыполненные</button>
             </div>
             <div class="buttons">
-                <button>Ожидают проверки</button>
+                <button class="click" id="click2" value="awaiting">Ожидают проверки</button>
             </div>
             <div class="buttons">
-                <button>С опозданием</button>
+                <button class="click" id="click3" value="late">С опозданием</button>
             </div>
             <div class="buttons">
-                <button>Проверено</button>
+                <button class="click" id="click4" value="verified">Проверено</button>
             </div>
         </div>
     </div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $('.click').on('click', function(e) {
+        e.preventDefault();
+        var status = $(this).val();
+        $.ajax({
+            url: "/status",
+            method: 'GET',
+            data: {
+                status: status
+            },
 
-</html>
+            error: function(xhr, status, error) {
+                var err = JSON.parse(xhr.responseText);
+                alert(error);
+            },
+            success: function(data) {
+                $('#homework-list').replaceWith(data);
+            }
+        });
+    });
+</script>

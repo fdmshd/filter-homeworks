@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeworkStatusesController::class, 'index']);
+
+Route::get('/status', [HomeworkStatusesController::class, 'getByStatus']);
