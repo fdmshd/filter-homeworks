@@ -40,5 +40,5 @@ http://localhost:8000/
 
 Для остановки приложения:
 ```bash
-    ./vendor/bin/sail stop
+./vendor/bin/sail stop
 ```
